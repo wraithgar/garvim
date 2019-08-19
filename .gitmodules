@@ -1,0 +1,99 @@
+[submodule "pack/garvim/start/jellybeans"]
+	path = pack/garvim/start/jellybeans
+	url = https://github.com/nanotech/jellybeans.vim.git
+[submodule "pack/garvim/start/nerdcommenter"]
+	path = pack/garvim/start/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "pack/garvim/start/nerdtreee"]
+	path = pack/garvim/start/nerdtreee
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "pack/garvim/start/csv"]
+	path = pack/garvim/start/csv
+	url = https://github.com/chrisbra/csv.vim.git
+[submodule "pack/garvim/start/node.js"]
+	path = pack/garvim/start/node.js
+	url = https://github.com/mmalecki/vim-node.js.git
+[submodule "pack/garvim/start/polyglot"]
+	path = pack/garvim/start/polyglot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule "pack/garvim/start/json"]
+	path = pack/garvim/start/json
+	url = https://github.com/elzr/vim-json.git
+[submodule "pack/garvim/start/editorconfig"]
+	path = pack/garvim/start/editorconfig
+	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "pack/garvim/start/node"]
+	path = pack/garvim/start/node
+	url = https://github.com/moll/vim-node.git
+[submodule "pack/garvim/start/pug"]
+	path = pack/garvim/start/pug
+	url = https://github.com/digitaltoad/vim-pug.git
+[submodule "pack/garvim/start/stylus"]
+	path = pack/garvim/start/stylus
+	url = https://github.com/iloginow/vim-stylus.git
+[submodule "pack/garvim/start/unimpaired"]
+	path = pack/garvim/start/unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "pack/garvim/start/supertab"]
+	path = pack/garvim/start/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "pack/garvim/start/fugitive"]
+	path = pack/garvim/start/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "pack/garvim/start/gundo"]
+	path = pack/garvim/start/gundo
+	url = https://github.com/sjl/gundo.vim.git
+[submodule "pack/garvim/start/tagbar"]
+	path = pack/garvim/start/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "pack/garvim/start/endwise"]
+	path = pack/garvim/start/endwise
+	url = https://github.com/tpope/vim-endwise.git
+[submodule "pack/garvim/start/css-color"]
+	path = pack/garvim/start/css-color
+	url = https://github.com/ap/vim-css-color.git
+[submodule "pack/garvim/start/easymotion"]
+	path = pack/garvim/start/easymotion
+	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "pack/garvim/start/nrrwrgn"]
+	path = pack/garvim/start/nrrwrgn
+	url = https://github.com/chrisbra/NrrwRgn.git
+[submodule "pack/garvim/start/buffergator"]
+	path = pack/garvim/start/buffergator
+	url = https://github.com/jeetsukumaran/vim-buffergator.git
+[submodule "pack/garvim/start/kwbd"]
+	path = pack/garvim/start/kwbd
+	url = https://github.com/rgarver/Kwbd.vim.git
+[submodule "pack/garvim/start/ctrlp"]
+	path = pack/garvim/start/ctrlp
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "pack/garvim/start/snippets"]
+	path = pack/garvim/start/snippets
+	url = https://github.com/honza/vim-snippets.git
+[submodule "pack/garvim/start/dispatch"]
+	path = pack/garvim/start/dispatch
+	url = https://github.com/tpope/vim-dispatch.git
+[submodule "pack/garvim/start/multiple-cursors"]
+	path = pack/garvim/start/multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors.git
+[submodule "pack/garvim/start/visualstar"]
+	path = pack/garvim/start/visualstar
+	url = https://github.com/thinca/vim-visualstar.git
+[submodule "pack/garvim/start/trailing-whitespace"]
+	path = pack/garvim/start/trailing-whitespace
+	url = https://github.com/bronson/vim-trailing-whitespace.git
+[submodule "pack/garvim/start/gitgutter"]
+	path = pack/garvim/start/gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "pack/garvim/start/zoomwin"]
+	path = pack/garvim/start/zoomwin
+	url = https://github.com/sh-dude/ZoomWin.git
+[submodule "pack/garvim/start/devicons"]
+	path = pack/garvim/start/devicons
+	url = https://github.com/ryanoasis/vim-devicons.git
+[submodule "pack/garvim/start/prettier"]
+	path = pack/garvim/start/prettier
+	url = https://github.com/prettier/vim-prettier.git
+[submodule "pack/garvim/start/syntastic"]
+	path = pack/garvim/start/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
