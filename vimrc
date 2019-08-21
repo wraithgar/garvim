@@ -1,9 +1,20 @@
-set shell=/bin/bash
+se shell=/bin/bash
+
+" Neovim disallow changing 'enconding' option after initialization
+" see https://github.com/neovim/neovim/pull/2929 for more details
+if !has('nvim')
+  se encoding=utf-8  " Set default encoding to UTF-8
+endif
+
+se linebreak
+se noerrorbells
+se novisualbell
+se history=1000
+color jellybeans
 
 filetype plugin indent on " Turn on filetype plugins (:help filetype-plugin)
 
 if has("gui_running")
-  set encoding=utf-8
   se guifont=DroidSansMono\ Nerd\ Font\ 12 " This looks good in linux
   " se vb t_vb=
   if has("autocmd")
@@ -16,13 +27,7 @@ if has("autocmd")
   " In Makefiles, use real tabs, not tabs expanded to spaces
   au FileType make setlocal noexpandtab
 
-  " This actually might be confusing, but the plugin +ruby+ already does
-  " this, so we want to do it only if the plugin +ruby+ is disabled for
-  " some reason
-  " if janus#is_plugin_disabled("ruby")
-    " Set the Ruby filetype for a number of common Ruby files without .rb
-    au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,config.ru,*.rake} set ft=ruby
-  " endif
+  au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,config.ru,*.rake} se ft=ruby
 
   " Make sure all mardown files have the correct filetype set and setup wrapping
   au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
@@ -34,7 +39,7 @@ if has("autocmd")
   au FileType python setlocal tabstop=4 shiftwidth=4
 
   " Reset json to json and set it up to use 2 spaces
-  au BufNewFile,BufRead *.json set filetype=json
+  au BufNewFile,BufRead *.json se filetype=json
   au FileType json setlocal tabstop=2 shiftwidth=2
 
   " Make pug use 2 spaces
@@ -47,14 +52,6 @@ if has("autocmd")
 
   if exists("g:autosave_on_blur")
     au FocusLost * silent! wall
-  endif
-endif
-
-if has("gui_running")
-  set encoding=utf-8
-  if has("autocmd")
-    " Automatically resize splits when resizing MacVim window
-    autocmd VimResized * wincmd =
   endif
 endif
 
@@ -239,80 +236,85 @@ cnoremap <expr> <C-P> getcmdline()[getcmdpos()-2] ==# ' ' ? expand('%:p:h') : "\
 ""
 
 " Yikes
-set nomodeline
+se nomodeline
 
 " Wildmenu is great
-set wildmenu
+se wildmenu
 
 " Tab bar always shown so gui vim doesn't go wonky w/ resizing
-set showtabline=2
+se showtabline=2
 
 " No idea why this defaults to nowrapscan
-set wrapscan
+se wrapscan
 
 " Just go ahead and reload the file if it changed out from under us
-set autoread
+se autoread
 
 " Fold by syntax but start with everything open
-set foldmethod=syntax
-set foldlevelstart=99
+se foldmethod=syntax
+" se foldlevelstart=99
+se nofoldenable
 
 
 if has('vim_starting') && !has('nvim') && &compatible
-  set nocompatible               " Be iMproved
+  se nocompatible               " Be iMproved
 endif
+
 " Show hybrid line number and relative number
-set number relativenumber
+se number relativenumber
 
-" toggle relativenumber when losing focus
-" disabled till we can only turn it on when number is already on
-" augroup numbertoggle
-"   autocmd!
-"   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-"   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-" augroup END
+" toggle relativenumber when losing focus, but only if this buffer already has
+" line numbers
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * if &number | se relativenumber | endif
+  autocmd BufLeave,FocusLost,InsertEnter   * if &number | se norelativenumber | endif
+augroup END
 
-set ruler             " Show line and column number
+se ruler             " Show line and column number
 syntax enable         " Turn on syntax highlighting allowing local overrides
-" Neovim disallow changing 'enconding' option after initialization
-" see https://github.com/neovim/neovim/pull/2929 for more details
-if !has('nvim')
-  set encoding=utf-8  " Set default encoding to UTF-8
-endif
+
+""
+"" Performance
+""
+
+se lazyredraw
+
 
 ""
 "" Whitespace
 ""
 
-set nowrap                        " don't wrap lines
-set tabstop=2                     " a tab is two spaces
-set shiftwidth=2                  " an autoindent (with <<) is two spaces
-set expandtab                     " use spaces, not tabs
-set list                          " Show invisible characters
-set backspace=indent,eol,start    " backspace through everything in insert mode
-set smartindent
+se nowrap                        " don't wrap lines
+se tabstop=2                     " a tab is two spaces
+se shiftwidth=2                  " an autoindent (with <<) is two spaces
+se shiftround                     " When shifting lines, round the indentation to the nearest multiple of “shiftwidth.”
+se expandtab                     " use spaces, not tabs
+se list                          " Show invisible characters
+se backspace=indent,eol,start    " backspace through everything in insert mode
+se smartindent
 
 if exists("g:enable_mvim_shift_arrow")
   let macvim_hig_shift_movement = 1 " mvim shift-arrow-keys
 endif
 
 " List chars
-set listchars=""                  " Reset the listchars
-set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
-set listchars+=trail:.            " show trailing spaces as dots
-set listchars+=extends:>          " The character to show in the last column when wrap is
+se listchars=""                  " Reset the listchars
+se listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
+se listchars+=trail:.            " show trailing spaces as dots
+se listchars+=extends:>          " The character to show in the last column when wrap is
                                   " off and the line continues beyond the right of the screen
-set listchars+=precedes:<         " The character to show in the last column when wrap is
+se listchars+=precedes:<         " The character to show in the last column when wrap is
                                   " off and the line continues beyond the left of the screen
 
 ""
 "" Searching
 ""
 
-set hlsearch    " highlight matches
-set incsearch   " incremental searching
-set ignorecase  " searches are case insensitive...
-set smartcase   " ... unless they contain at least one capital letter
+se hlsearch    " highlight matches
+se incsearch   " incremental searching
+se ignorecase  " searches are case insensitive...
+se smartcase   " ... unless they contain at least one capital letter
 
 ""
 "" Wild settings
@@ -322,22 +324,22 @@ set smartcase   " ... unless they contain at least one capital letter
 " set wildmode=list:longest,list:full
 
 " Disable output and VCS files
-set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+se wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
 
 " Disable archive files
-set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+se wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 
 " Ignore bundler and sass cache
-set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+se wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
 
 " Ignore librarian-chef, vagrant, test-kitchen and Berkshelf cache
-set wildignore+=*/tmp/librarian/*,*/.vagrant/*,*/.kitchen/*,*/vendor/cookbooks/*
+se wildignore+=*/tmp/librarian/*,*/.vagrant/*,*/.kitchen/*,*/vendor/cookbooks/*
 
 " Ignore rails temporary asset caches
-set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
+se wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
 
 " Disable temp and backup files
-set wildignore+=*.swp,*~,._*
+se wildignore+=*.swp,*~,._*
 
 ""
 "" Backup and swap files
@@ -357,4 +359,3 @@ if has("statusline") && !&cp
   set statusline+=[%b][0x%B]
 endif
 
-color jellybeans

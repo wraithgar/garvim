@@ -4,9 +4,6 @@
 [submodule "pack/garvim/start/nerdcommenter"]
 	path = pack/garvim/start/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "pack/garvim/start/nerdtreee"]
-	path = pack/garvim/start/nerdtreee
-	url = https://github.com/scrooloose/nerdtree.git
 [submodule "pack/garvim/start/csv"]
 	path = pack/garvim/start/csv
 	url = https://github.com/chrisbra/csv.vim.git
@@ -97,3 +94,6 @@
 [submodule "pack/garvim/start/syntastic"]
 	path = pack/garvim/start/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "pack/garvim/start/nerdtree"]
+	path = pack/garvim/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git

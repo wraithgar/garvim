@@ -1,7 +1,6 @@
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
 
 " Default mapping, <leader>n
-" call janus#add_mapping('nerdtree', 'map', '<leader>n', ':NERDTreeToggle<CR>:NERDTreeMirror<CR>')
 map <leader>n :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 
 augroup AuNERDTreeCmd
@@ -10,6 +9,9 @@ autocmd AuNERDTreeCmd FocusGained * call s:UpdateNERDTree()
 
 " If the parameter is a directory, cd into it
 function s:CdIfDirectory(directory)
+  " TODO this directory param is wrong on actual directories. It appends
+  " NERD_tree_1 to the end!?
+  " echom a:directory
   let explicitDirectory = isdirectory(a:directory)
   let directory = explicitDirectory || empty(a:directory)
 
