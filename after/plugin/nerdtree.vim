@@ -4,37 +4,13 @@ let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', 
 map <leader>n :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 
 augroup AuNERDTreeCmd
-autocmd AuNERDTreeCmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
+" How can I open NERDTree automatically when vim starts up on opening a directory?
+autocmd AuNERDTreeCmd StdinReadPre * let s:std_in=1
+autocmd AuNERDTreeCmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+" How can I close vim if the only window left open is a NERDTree?
+autocmd AuNERDTreeCmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 autocmd AuNERDTreeCmd FocusGained * call s:UpdateNERDTree()
-
-" If the parameter is a directory, cd into it
-function s:CdIfDirectory(directory)
-  " TODO this directory param is wrong on actual directories. It appends
-  " NERD_tree_1 to the end!?
-  " echom a:directory
-  let explicitDirectory = isdirectory(a:directory)
-  let directory = explicitDirectory || empty(a:directory)
-
-  if explicitDirectory
-    exe "cd " . fnameescape(a:directory)
-  endif
-
-  " Allows reading from stdin
-  " ex: git diff | mvim -R -
-  if strlen(a:directory) == 0
-    return
-  endif
-
-  if directory
-    NERDTree
-    wincmd p
-    bd
-  endif
-
-  if explicitDirectory
-    wincmd p
-  endif
-endfunction
 
 " NERDTree utility function
 function s:UpdateNERDTree(...)
