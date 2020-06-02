@@ -1,4 +1,3 @@
-se guifont=DroidSansMono\ Nerd\ Font\ 12 " This looks good in linux
 se guioptions=aegirLM
 se vb t_vb=
 if has("autocmd")
@@ -7,6 +6,7 @@ if has("autocmd")
 endif
 
 if has("gui_macvim")
+  se guifont=DroidSansMonoNerdFontComplete-:h14 " This looks good in os/x
   " Map command-[ and command-] to indenting or outdenting
   " while keeping the original selection in visual mode
   vmap <D-]> >gv
@@ -54,4 +54,6 @@ if has("gui_macvim")
   imap <D-8> <Esc>8gt
   map  <D-9> 9gt
   imap <D-9> <Esc>9gt
+else
+  se guifont=DroidSansMono\ Nerd\ Font\ 12 " This looks good in linux
 endif
