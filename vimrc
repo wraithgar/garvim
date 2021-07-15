@@ -1,6 +1,6 @@
 se shell=/bin/bash
 
-" Neovim disallow changing 'enconding' option after initialization
+" Neovim disallow changing 'encoding' option after initialization
 " see https://github.com/neovim/neovim/pull/2929 for more details
 if !has('nvim')
   se encoding=utf-8  " Set default encoding to UTF-8

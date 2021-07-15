@@ -22,12 +22,6 @@
 [submodule "pack/garvim/start/node"]
 	path = pack/garvim/start/node
 	url = https://github.com/moll/vim-node.git
-[submodule "pack/garvim/start/pug"]
-	path = pack/garvim/start/pug
-	url = https://github.com/digitaltoad/vim-pug.git
-[submodule "pack/garvim/start/stylus"]
-	path = pack/garvim/start/stylus
-	url = https://github.com/iloginow/vim-stylus.git
 [submodule "pack/garvim/start/unimpaired"]
 	path = pack/garvim/start/unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
@@ -52,9 +46,6 @@
 [submodule "pack/garvim/start/easymotion"]
 	path = pack/garvim/start/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
-[submodule "pack/garvim/start/nrrwrgn"]
-	path = pack/garvim/start/nrrwrgn
-	url = https://github.com/chrisbra/NrrwRgn.git
 [submodule "pack/garvim/start/buffergator"]
 	path = pack/garvim/start/buffergator
 	url = https://github.com/jeetsukumaran/vim-buffergator.git
@@ -70,9 +61,6 @@
 [submodule "pack/garvim/start/dispatch"]
 	path = pack/garvim/start/dispatch
 	url = https://github.com/tpope/vim-dispatch.git
-[submodule "pack/garvim/start/multiple-cursors"]
-	path = pack/garvim/start/multiple-cursors
-	url = https://github.com/terryma/vim-multiple-cursors.git
 [submodule "pack/garvim/start/visualstar"]
 	path = pack/garvim/start/visualstar
 	url = https://github.com/thinca/vim-visualstar.git
@@ -88,9 +76,6 @@
 [submodule "pack/garvim/start/devicons"]
 	path = pack/garvim/start/devicons
 	url = https://github.com/ryanoasis/vim-devicons.git
-[submodule "pack/garvim/start/prettier"]
-	path = pack/garvim/start/prettier
-	url = https://github.com/prettier/vim-prettier.git
 [submodule "pack/garvim/start/syntastic"]
 	path = pack/garvim/start/syntastic
 	url = https://github.com/vim-syntastic/syntastic.git
