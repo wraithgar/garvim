@@ -1,6 +1,6 @@
-nmap <leader>gb :Gblame<CR>
-nmap <leader>gs :Gstatus<CR>
-nmap <leader>gd :Gdiff<CR>
-nmap <leader>gl :Glog<CR>
-nmap <leader>gc :Gcommit<CR>
+nmap <leader>gb :Git blame<CR>
+nmap <leader>gs :Git<CR>
+nmap <leader>gd :Gdiffsplit<CR>
+nmap <leader>gl :Gclog<CR>
+nmap <leader>gc :Git commit<CR>
 nmap <leader>gp :Git push<CR>
