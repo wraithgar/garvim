@@ -43,6 +43,8 @@ if has("autocmd")
   if exists("g:autosave_on_blur")
     au FocusLost * silent! wall
   endif
+  " No more automatic wrapping for any file type ever
+  au BufEnter * set textwidth=0
 endif
 
 ""
@@ -100,8 +102,8 @@ map <Down> gj
 map <Up> gk
 
 " Treat long lines as break lines (useful when moving around in them)
-map j gj
-map k gk
+" map j gj
+" map k gk
 
 " Create a new tab with <leader>tn
 map <leader>tn :tabnew<cr>
@@ -226,7 +228,7 @@ se lazyredraw
 "" Whitespace
 ""
 
-se nowrap                        " don't wrap lines
+se wrap                          " wrap lines
 se tabstop=2                     " a tab is two spaces
 se shiftwidth=2                  " an autoindent (with <<) is two spaces
 se shiftround                     " When shifting lines, round the indentation to the nearest multiple of “shiftwidth.”
