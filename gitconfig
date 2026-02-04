@@ -1,0 +1,70 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = git@github.com:wraithgar/garvim.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+	rebase = true
+[submodule "pack/garvim/start/buffergator"]
+	url = https://github.com/jeetsukumaran/vim-buffergator.git
+[submodule "pack/garvim/start/css-color"]
+	url = https://github.com/ap/vim-css-color.git
+[submodule "pack/garvim/start/csv"]
+	url = https://github.com/chrisbra/csv.vim.git
+[submodule "pack/garvim/start/ctrlp"]
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "pack/garvim/start/devicons"]
+	url = https://github.com/ryanoasis/vim-devicons.git
+[submodule "pack/garvim/start/dispatch"]
+	url = https://github.com/tpope/vim-dispatch.git
+[submodule "pack/garvim/start/easymotion"]
+	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "pack/garvim/start/editorconfig"]
+	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "pack/garvim/start/endwise"]
+	url = https://github.com/tpope/vim-endwise.git
+[submodule "pack/garvim/start/fugitive"]
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "pack/garvim/start/gitgutter"]
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "pack/garvim/start/gundo"]
+	url = https://github.com/sjl/gundo.vim.git
+[submodule "pack/garvim/start/jellybeans"]
+	url = https://github.com/nanotech/jellybeans.vim.git
+[submodule "pack/garvim/start/json"]
+	url = https://github.com/elzr/vim-json.git
+[submodule "pack/garvim/start/kwbd"]
+	url = https://github.com/rgarver/Kwbd.vim.git
+[submodule "pack/garvim/start/nerdcommenter"]
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "pack/garvim/start/nerdtree"]
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "pack/garvim/start/node"]
+	url = https://github.com/moll/vim-node.git
+[submodule "pack/garvim/start/node.js"]
+	url = https://github.com/mmalecki/vim-node.js.git
+[submodule "pack/garvim/start/polyglot"]
+	url = https://github.com/sheerun/vim-polyglot
+[submodule "pack/garvim/start/snippets"]
+	url = https://github.com/honza/vim-snippets.git
+[submodule "pack/garvim/start/supertab"]
+	url = https://github.com/ervandew/supertab.git
+[submodule "pack/garvim/start/syntastic"]
+	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "pack/garvim/start/tagbar"]
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "pack/garvim/start/trailing-whitespace"]
+	url = https://github.com/bronson/vim-trailing-whitespace.git
+[submodule "pack/garvim/start/unimpaired"]
+	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "pack/garvim/start/visualstar"]
+	url = https://github.com/thinca/vim-visualstar.git
+[submodule "pack/garvim/start/zoomwin"]
+	url = https://github.com/sh-dude/ZoomWin.git
