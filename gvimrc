@@ -6,6 +6,7 @@ if has("autocmd")
 endif
 
 if has("gui_macvim")
+  " se guifont=Menlo-Regular:h14 " osx is being weird
   se guifont=DroidSansMNFM:h14 " This looks good in os/x
   " used to be se guifont=DroidSansMonoNerdFontComplete-:h14
   " Map command-[ and command-] to indenting or outdenting
