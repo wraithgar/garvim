@@ -1,3 +1,4 @@
+gitconfig needs to be hard linked to .git/config
 nvim
 if nvim flag
 https://github.com/nvim-telescope/telescope.nvim
