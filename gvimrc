@@ -57,6 +57,5 @@ if has("gui_macvim")
   map  <D-9> 9gt
   imap <D-9> <Esc>9gt
 else
-  se guifont=DroidSansM\ Nerd\ Font\ 12
-  " se guifont=DroidSansMono\ Nerd\ Font\ 14 " This looks good in linux
+  se guifont=DroidSansM\ Nerd\ Font\ 14
 endif
