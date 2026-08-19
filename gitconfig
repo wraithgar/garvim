@@ -12,36 +12,22 @@
 	remote = origin
 	merge = refs/heads/main
 	rebase = true
-[submodule "pack/garvim/start/buffergator"]
-	url = https://github.com/jeetsukumaran/vim-buffergator.git
 [submodule "pack/garvim/start/css-color"]
 	url = https://github.com/ap/vim-css-color.git
 [submodule "pack/garvim/start/csv"]
 	url = https://github.com/chrisbra/csv.vim.git
-[submodule "pack/garvim/start/ctrlp"]
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule "pack/garvim/start/devicons"]
 	url = https://github.com/ryanoasis/vim-devicons.git
-[submodule "pack/garvim/start/dispatch"]
-	url = https://github.com/tpope/vim-dispatch.git
-[submodule "pack/garvim/start/easymotion"]
-	url = https://github.com/Lokaltog/vim-easymotion.git
 [submodule "pack/garvim/start/editorconfig"]
 	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule "pack/garvim/start/endwise"]
-	url = https://github.com/tpope/vim-endwise.git
 [submodule "pack/garvim/start/fugitive"]
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule "pack/garvim/start/gitgutter"]
 	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "pack/garvim/start/gundo"]
-	url = https://github.com/sjl/gundo.vim.git
 [submodule "pack/garvim/start/jellybeans"]
 	url = https://github.com/nanotech/jellybeans.vim.git
 [submodule "pack/garvim/start/json"]
 	url = https://github.com/elzr/vim-json.git
-[submodule "pack/garvim/start/kwbd"]
-	url = https://github.com/rgarver/Kwbd.vim.git
 [submodule "pack/garvim/start/nerdcommenter"]
 	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "pack/garvim/start/nerdtree"]
