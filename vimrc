@@ -1,10 +1,7 @@
-se shell=/bin/bash
+" se shell=/bin/bash
+se shell=/usr/bin/fish
 
-" Neovim disallow changing 'encoding' option after initialization
-" see https://github.com/neovim/neovim/pull/2929 for more details
-if !has('nvim')
-  se encoding=utf-8  " Set default encoding to UTF-8
-endif
+se encoding=utf-8  " Set default encoding to UTF-8
 
 se linebreak
 se noerrorbells
@@ -19,7 +16,7 @@ if has("autocmd")
 
   au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,config.ru,*.rake} se ft=ruby
 
-  " Make sure all mardown files have the correct filetype set and setup wrapping
+  " Make sure all markdown files have the correct filetype set and setup wrapping
   au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
   if !exists("g:disable_markdown_autostyle")
     au FileType markdown setlocal wrap linebreak textwidth=72 nolist
@@ -54,52 +51,12 @@ endif
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
-" Switch CWD to the directory of the open buffer
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
-
-" Toggle paste mode
-nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
-imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
-
-" format the entire file
-nnoremap <leader>fef :normal! gg=G``<CR>
-
-" upper/lower word
-nmap <leader>u mQviwU`Q
-nmap <leader>l mQviwu`Q
-
-" upper/lower first char of word
-nmap <leader>U mQgewvU`Q
-nmap <leader>L mQgewvu`Q
-
-" cd to the directory containing the file in the buffer
-nmap <silent> <leader>cd :lcd %:h<CR>
-
-" Create the directory containing the file in the buffer
-nmap <silent> <leader>md :!mkdir -p %:p:h<CR>
-
-" Some helpers to edit mode
-" http://vimcasts.org/e/14
-nmap <leader>ew :e <C-R>=expand('%:h').'/'<cr>
-nmap <leader>es :sp <C-R>=expand('%:h').'/'<cr>
-nmap <leader>ev :vsp <C-R>=expand('%:h').'/'<cr>
-nmap <leader>et :tabe <C-R>=expand('%:h').'/'<cr>
-
-" Swap two words
-nmap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
-
-" Underline the current line with '='
-nmap <silent> <leader>ul :t.<CR>Vr=
-
 " set text wrapping toggles
 nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
 
-" find merge conflict markers
-nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
-
 " Map the arrow keys to be based on display lines, not physical lines
-map <Down> gj
-map <Up> gk
+" map <Down> gj
+" map <Up> gk
 
 " Treat long lines as break lines (useful when moving around in them)
 " map j gj
@@ -107,71 +64,6 @@ map <Up> gk
 
 " Create a new tab with <leader>tn
 map <leader>tn :tabnew<cr>
-
-" Toggle hlsearch with <leader>hs
-nmap <leader>hs :set hlsearch! hlsearch?<CR>
-
-" Adjust viewports to the same size
-map <Leader>= <C-w>=
-
-" Map command-[ and command-] to indenting or outdenting
-" while keeping the original selection in visual mode
-vmap <A-]> >gv
-vmap <A-[> <gv
-
-nmap <A-]> >>
-nmap <A-[> <<
-
-omap <A-]> >>
-omap <A-[> <<
-
-imap <A-]> <Esc>>>i
-imap <A-[> <Esc><<i
-
-" Bubble single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
-nmap <C-k> [e
-nmap <C-j> ]e
-
-" Bubble multiple lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
-vmap <C-k> [egv
-vmap <C-j> ]egv
-
-" Make shift-insert work like in Xterm
-map <S-Insert> <MiddleMouse>
-map! <S-Insert> <MiddleMouse>
-
-" Map Control-# to switch tabs
-map  <C-0> 0gt
-imap <C-0> <Esc>0gt
-map  <C-1> 1gt
-imap <C-1> <Esc>1gt
-map  <C-2> 2gt
-imap <C-2> <Esc>2gt
-map  <C-3> 3gt
-imap <C-3> <Esc>3gt
-map  <C-4> 4gt
-imap <C-4> <Esc>4gt
-map  <C-5> 5gt
-imap <C-5> <Esc>5gt
-map  <C-6> 6gt
-imap <C-6> <Esc>6gt
-map  <C-7> 7gt
-imap <C-7> <Esc>7gt
-map  <C-8> 8gt
-imap <C-8> <Esc>8gt
-map  <C-9> 9gt
-imap <C-9> <Esc>9gt
-
-""
-"" Command-Line Mappings
-""
-
-" After whitespace, insert the current directory into a command-line path
-cnoremap <expr> <C-P> getcmdline()[getcmdpos()-2] ==# ' ' ? expand('%:p:h') : "\<C-P>"
 
 ""
 "" Basic Setup
@@ -198,15 +90,14 @@ se foldmethod=syntax
 se nofoldenable
 
 
-if has('vim_starting') && !has('nvim') && &compatible
-  se nocompatible               " Be iMproved
+if has('vim_starting') && &compatible
+  se nocompatible
 endif
 
 " Show hybrid line number and relative number
 se number relativenumber
 
-" toggle relativenumber when losing focus, but only if this buffer already has
-" line numbers
+" toggle relativenumber when losing focus, but only if this buffer already has line numbers
 augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave * if &number | se relativenumber | endif
@@ -243,8 +134,8 @@ endif
 
 " List chars
 se listchars=""                  " Reset the listchars
-se listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
-se listchars+=trail:.            " show trailing spaces as dots
+se listchars=tab:\ \             " a tab should display as "  ",
+se listchars+=trail:.            " trailing whitespace as "."
 se listchars+=extends:>          " The character to show in the last column when wrap is
                                   " off and the line continues beyond the right of the screen
 se listchars+=precedes:<         " The character to show in the last column when wrap is
@@ -263,8 +154,7 @@ se smartcase   " ... unless they contain at least one capital letter
 "" Wild settings
 ""
 
-" TODO: Investigate the precise meaning of these settings
-" set wildmode=list:longest,list:full
+set wildmode=list:longest,list:full
 
 " Disable output and VCS files
 se wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
@@ -301,4 +191,3 @@ if has("statusline") && !&cp
   set statusline+=Buf:#%n
   set statusline+=[%b][0x%B]
 endif
-
