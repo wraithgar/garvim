@@ -22,8 +22,6 @@
 	url = https://github.com/editorconfig/editorconfig-vim.git
 [submodule "pack/garvim/start/fugitive"]
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "pack/garvim/start/gitgutter"]
-	url = https://github.com/airblade/vim-gitgutter.git
 [submodule "pack/garvim/start/jellybeans"]
 	url = https://github.com/nanotech/jellybeans.vim.git
 [submodule "pack/garvim/start/json"]
@@ -32,25 +30,11 @@
 	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "pack/garvim/start/nerdtree"]
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "pack/garvim/start/node"]
-	url = https://github.com/moll/vim-node.git
 [submodule "pack/garvim/start/node.js"]
 	url = https://github.com/mmalecki/vim-node.js.git
 [submodule "pack/garvim/start/polyglot"]
 	url = https://github.com/sheerun/vim-polyglot
-[submodule "pack/garvim/start/snippets"]
-	url = https://github.com/honza/vim-snippets.git
-[submodule "pack/garvim/start/supertab"]
-	url = https://github.com/ervandew/supertab.git
-[submodule "pack/garvim/start/syntastic"]
-	url = https://github.com/vim-syntastic/syntastic.git
-[submodule "pack/garvim/start/tagbar"]
-	url = https://github.com/majutsushi/tagbar.git
 [submodule "pack/garvim/start/trailing-whitespace"]
 	url = https://github.com/bronson/vim-trailing-whitespace.git
-[submodule "pack/garvim/start/unimpaired"]
-	url = https://github.com/tpope/vim-unimpaired.git
 [submodule "pack/garvim/start/visualstar"]
 	url = https://github.com/thinca/vim-visualstar.git
-[submodule "pack/garvim/start/zoomwin"]
-	url = https://github.com/sh-dude/ZoomWin.git
