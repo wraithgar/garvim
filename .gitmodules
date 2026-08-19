@@ -31,9 +31,6 @@
 [submodule "pack/garvim/start/devicons"]
 	path = pack/garvim/start/devicons
 	url = https://github.com/ryanoasis/vim-devicons.git
-[submodule "pack/garvim/start/syntastic"]
-	path = pack/garvim/start/syntastic
-	url = https://github.com/vim-syntastic/syntastic.git
 [submodule "pack/garvim/start/nerdtree"]
 	path = pack/garvim/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
