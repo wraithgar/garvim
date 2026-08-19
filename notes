@@ -1,6 +1,3 @@
 gitconfig needs to be hard linked to .git/config or changes won't sync
-nvim
-if nvim flag
-https://github.com/nvim-telescope/telescope.nvim
 mkdir ~/.vim/_temp
 mkdir ~/.vim/_backup
