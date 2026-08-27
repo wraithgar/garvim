@@ -10,5 +10,5 @@ if has("gui_macvim")
 else
   " Make ubuntu clipboard be the vim clipboard
   se clipboard^=unnamedplus
-  se guifont=DroidSansM\ Nerd\ Font\ 12
+  se guifont=DroidSansM\ Nerd\ Font\ Mono\ 12
 endif
