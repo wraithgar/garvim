@@ -11,8 +11,7 @@ color jellybeans
 filetype plugin indent on " Turn on filetype plugins (:help filetype-plugin)
 
 if has("autocmd")
-  " This isn't 100% *sigh*
-  au BufRead,BufNewFile *.asm6 se ft=asm68k
+  au BufRead,BufNewFile *.asm6 se ft=asm6
 
   " In Makefiles, use real tabs, not tabs expanded to spaces
   au FileType make setlocal noexpandtab

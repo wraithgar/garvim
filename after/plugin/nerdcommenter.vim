@@ -13,3 +13,7 @@ let g:NERDSpaceDelims = 1
 
 " Flush comments to the left
 let g:NERDDefaultAlign = 'left'
+
+let g:NERDCustomDelimiters = { 'asm6': { 'left': ';' } }
+let g:NERDTrimTrailingWhitespace = 1
+let g:NERDCommentEmptyLines = 1

@@ -37,7 +37,7 @@ syn keyword asm6Branch bcc bcs beq bmi bne bpl bvc bvs jmp jsr
 " at "http://www.xmission.com/~trevin/atari/atari.shtml"
 syn keyword asmSallyUndoc anc arr asr asx ax7 axe brk dcp jam las lax php rla rra sax slo sre sx7 sy7 xea xs7
 
-" TODO
+" TODO absolute addressing: sta a:location
 " TODO local label @tmp1:
 syn match asmLabel "^[a-z_][a-z0-9_]*"
 syn match asmComment ";.*"hs=s+1 contains=asmTodo
