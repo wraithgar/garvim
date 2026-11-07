@@ -51,6 +51,9 @@ endif
 "" General Mappings (Normal, Visual, Operator-pending)
 ""
 
+" Disable visual mode hot key
+map Q <Nop>
+
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
